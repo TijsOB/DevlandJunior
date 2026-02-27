@@ -61,6 +61,10 @@ h1{
     1px 1px 0 #FCFCFC;
 }
 
+p{
+  font-family: 'Heartbeat';
+}
+
 h2{
   border-left: 5px solid #27AE60;
   padding-left: 10px;
@@ -107,8 +111,7 @@ article h2{
   border-left: none;
   background-position: center;
   background-size: cover;
-  text-align: center;
-}
+  }
 article h2.fun-for-family{
   background-image: url('../images/family-fun-george-arthur-pflueger.jpg');
 }
@@ -155,7 +158,9 @@ button{
   height: 64px;
 }
 
-.sidy-by-side{
+.sidy-by-side {
+  display: flex;
+  justify-content: space-between;
 }
 
 .description{
@@ -186,7 +191,16 @@ footer{
 */
 
 @media (max-width: 480px) {
-
+  .hidden-on-lg{
+    display: block;
+  }
+  .hidden-on-sm{
+    display: none;
+  }
+  .sidy-by-side{
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /* 
@@ -203,10 +217,6 @@ footer{
   .row{
     flex-direction: column;
   }
-  .sidy-by-side{
-    flex-direction: column;
-    align-items: center;
-  }
 }
 
 /*
@@ -214,11 +224,11 @@ footer{
 */
 @font-face {
   font-family: 'Heartbeat';
-  src:  url('fonts/heartbeat.eot') format('eot'),
-        url('fonts/heartbeat.otf') format('otf'),
-        url('fonts/heartbeat.woff') format('woff'),
-        url('fonts/heartbeat.svg') format('svg'),
-        url('fonts/heartbeat.ttf') format('ttf');
+  src:  url('../fonts/heartbeat.eot') format('eot'),
+        url('../fonts/heartbeat.otf') format('otf'),
+        url('../fonts/heartbeat.woff') format('woff'),
+        url('../fonts/heartbeat.svg') format('svg'),
+        url('../fonts/heartbeat.ttf') format('ttf');
 }
 
 /*
@@ -251,4 +261,15 @@ to   { opacity: 1; }
 @-o-keyframes fadein {
 from { opacity: 0; }
 to   { opacity: 1; }
+}
+
+.product-buy{
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.product-buy-content{
+  display: flex;
+  flex-direction: column;
 }
